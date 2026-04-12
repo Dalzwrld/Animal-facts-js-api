@@ -80,7 +80,7 @@
   gap: 885px;
 }
 
-.container .text-wrapper {
+.container .main-heading {
   margin-top: 40.5px;
   width: 91px;
   height: 43px;
@@ -98,12 +98,9 @@
   margin-top: 30px;
   width: 64px;
   height: 64px;
-  background-image: url(images/icons8-paw-64-2.png);
-  background-size: cover;
-  background-position: 50% 50%;
 }
 
-.container .hero-div {
+.container .hero {
   position: absolute;
   top: 165px;
   left: 196px;
@@ -259,7 +256,7 @@
   font-style: var(--headings-font-style);
 }
 
-.container .footer {
+.container footer {
   position: relative;
   align-self: stretch;
   width: 100%;
