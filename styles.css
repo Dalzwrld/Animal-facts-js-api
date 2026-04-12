@@ -23,11 +23,6 @@
   background-position: 50% 50%;
 }
 
-.container .main-section::-webkit-scrollbar {
-  width: 0;
-  display: none;
-}
-
 .container .navbar {
   display: flex;
   flex-direction: column;
