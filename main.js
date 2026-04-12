@@ -4,6 +4,10 @@ const API_key = "O6gDOjX0GLmJOBMyTWDoj5RMeMw3Y0LEovT0oWvF";
 
 const animals = ["lion", "cat", "dog", "tiger", "elephant",];
 
+const btn = document.querySelector(".discover-btn");
+
+btn.addEventListener("click", displayAnimal);
+
 async function displayAnimal() {
     const randomAnimal = animals[Math.floor(Math.random() * animals.length)]
 
