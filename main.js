@@ -11,3 +11,5 @@ const habitat = animal.characteristics?.habitat;
 const diet = animal.characteristics?.diet;
 const group = animal.characteristics?.group;
 const lifeSpan = animal.characteristics?.lifespan;
+
+const animals = ["lion", "cat", "dog", "tiger", "elephant",]
