@@ -1,6 +1,10 @@
+const API_key = "O6gDOjX0GLmJOBMyTWDoj5RMeMw3Y0LEovT0oWvF";
+const animal = "";
+
 let fauna = JSON.parse(localStorage.getItem("animal")) || [];
 
-const animal = data[0];
+
+
 
 const name = animal.name;
 const taxonomy = animal?.taxonomy || {};
