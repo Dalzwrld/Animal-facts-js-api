@@ -93,7 +93,7 @@
   width: 100%;
 }
 
-.container .text-wrapper {
+.container .logo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,7 +109,7 @@
     font-style: var(--website-name-font-style);
 }
 
-.container .logo {
+.container .logoimg {
     position: relative;
     width: 64px;
     height: 64px;
