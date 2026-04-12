@@ -284,6 +284,10 @@
   font-style: var(--paragraphs-font-style);
 }
 
+.container .image-by-andreas a {
+    text-decoration: none;
+}
+
 .container .span {
   font-family: var(--paragraphs-font-family);
   font-weight: var(--paragraphs-font-weight);
@@ -308,6 +312,10 @@
   font-style: var(--paragraphs-font-style);
 }
 
+.container .icon-by a {
+    text-decoration: none;
+}
+
 .container .animal-data-by-API {
   position: absolute;
   top: 18px;
@@ -320,4 +328,8 @@
   line-height: var(--paragraphs-line-height);
   white-space: nowrap;
   font-style: var(--paragraphs-font-style);
+}
+
+.container .animal-data-by-API a {
+    text-decoration: none;
 }
