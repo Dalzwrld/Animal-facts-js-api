@@ -55,12 +55,24 @@
     background-color: #ffffff;
 }
 
+.main-section .navbar {
+    display: flex;
+    flex-direction: column;
+    width: 1440px;
+    height: auto;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 26px 200px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
 .container .main-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px 200px;
+    padding: 0 200px;
     gap: 10px;
     top: 0;
     left: 0;
