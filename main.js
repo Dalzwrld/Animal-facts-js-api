@@ -9,22 +9,25 @@ const btn = document.querySelector(".discover-btn");
 btn.addEventListener("click", displayAnimal);
 
 async function displayAnimal() {
-    const randomAnimal = animals[Math.floor(Math.random() * animals.length)]
+    const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
 
-    const endpoint = `https://api.api-ninjas.com/v1/animals?name={randomAnimal}`;
+    const endpoint = `https://api.api-ninjas.com/v1/animals?name=${randomAnimal}`;
 
     try {
         const response = await fetch(endpoint, {
             method: "GET",
+            headers: {
+                "X-API-KEY": API_key
+            }
         });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
 
         const data = await response.json();
 
         const animal = data[0];
+
+        if (!animal) {
+            XPathResult.innerHTML = "<p>No animal found. Please try again.</p>";
+        }
     } catch (error) {
         console.error("Error fetching your animal:", error);
         document.querySelector().textContent = "Unable to retrieve animal right now."
@@ -47,3 +50,6 @@ for (let key in taxonomy) {
         const item = item.toLowerCase("").split;
     }
 }
+
+const locationTxt = locations.length > 0 ? locations.join(", ") : "Not available";
+
