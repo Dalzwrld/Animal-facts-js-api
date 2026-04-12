@@ -66,7 +66,7 @@
     left: 0;
     position: relative;
     width: 100%;
-    height: 750px;
+    height: 700px;
     background-image: url(images/andibreit-tiger-2535888.jpg);
     background-size: cover;
     background-position: 50% 50%;
@@ -76,106 +76,105 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 0px;
+  padding: 0 200px;
   position: relative;
   width: 100%;
-  flex: 0 0 auto;
 }
 
 .container .text-wrapper {
     display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: var(--website-name-font-family);
-  font-weight: var(--website-name-font-weight);
-  color: #ffffff;
-  font-size: var(--website-name-font-size);
-  letter-spacing: var(--website-name-letter-spacing);
-  line-height: var(--website-name-line-height);
-  font-style: var(--website-name-font-style);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: var(--website-name-font-family);
+    font-weight: var(--website-name-font-weight);
+    color: #ffffff;
+    font-size: var(--website-name-font-size);
+    letter-spacing: var(--website-name-letter-spacing);
+    line-height: var(--website-name-line-height);
+    font-style: var(--website-name-font-style);
 }
 
 .container .logo {
-  position: relative;
-  width: 64px;
-  height: 64px;
+    position: relative;
+    width: 64px;
+    height: 64px;
 }
 
 .container .hero {
-  display: flex;
-  flex-direction: column;
-  width: 1040px;
-  align-items: flex-start;
-  top: 165px;
-  background-color: #69af5066;
-  border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    align-items: flex-start;
+    top: 165px;
+    background-color: #69af5066;
+    border-radius: 10px;
 }
 
 .container .main-heading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 56px 0px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-  overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 56px 0px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    overflow: hidden;
 }
 
 .container .title {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  margin-left: -4.5px;
-  font-family: var(--main-heading-font-family);
-  font-weight: var(--main-heading-font-weight);
-  color: #ffffff;
-  font-size: var(--main-heading-font-size);
-  letter-spacing: var(--main-heading-letter-spacing);
-  line-height: var(--main-heading-line-height);
-  font-style: var(--main-heading-font-style);
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    margin-left: -4.5px;
+    font-family: var(--main-heading-font-family);
+    font-weight: var(--main-heading-font-weight);
+    color: #ffffff;
+    font-size: var(--main-heading-font-size);
+    letter-spacing: var(--main-heading-letter-spacing);
+    line-height: var(--main-heading-line-height);
+    font-style: var(--main-heading-font-style);
 }
 
 .container .intro {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 16px 0px;
-  position: relative;
-  flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 0px;
+    position: relative;
+    flex: 0 0 auto;
 }
 
 .container .p {
-  position: relative;
-  width: 1040px;
-  margin-top: -1px;
-  font-family: var(--intro-font-family);
-  font-weight: var(--intro-font-weight);
-  color: var(--intro);
-  font-size: var(--intro-font-size);
-  text-align: center;
-  letter-spacing: var(--intro-letter-spacing);
-  line-height: var(--intro-line-height);
-  font-style: var(--intro-font-style);
+    position: relative;
+    width: 1040px;
+    margin-top: -1px;
+    font-family: var(--intro-font-family);
+    font-weight: var(--intro-font-weight);
+    color: var(--intro);
+    font-size: var(--intro-font-size);
+    text-align: center;
+    letter-spacing: var(--intro-letter-spacing);
+    line-height: var(--intro-line-height);
+    font-style: var(--intro-font-style);
 }
 
 .container .about-us {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 90px 200px;
-  position: relative;
-  align-self: stretch;
-  width: 100%;
-  flex: 0 0 auto;
-  background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 90px 200px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+    background-color: #ffffff;
 }
 
 .container .aboutus-div {
