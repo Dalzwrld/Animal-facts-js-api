@@ -57,6 +57,10 @@ function renderAnimal() {
         fetch("https://api-ninjas.com/api/animals").then(response => response.json()).then(data => {
             const animal = data[0];
 
+            const name = data.name;
+
+            const locationTxt = locations.length > 0 ? locations.join(", ") : "Not available";
+
             const taxonomy = {
                 kingdom: data.kingdom,
                 phylum: data.phylum,
@@ -163,9 +167,6 @@ function renderAnimal() {
     animal.appendChild(card);
 }
 
-
-
-const locationTxt = locations.length > 0 ? locations.join(", ") : "Not available";
 
 function saveToLocalStorage() {
     localStorage.setItem("animal", JSON.stringify(fauna));
