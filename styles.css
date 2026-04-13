@@ -145,7 +145,7 @@
   position: relative;
   width: 100%;
   height: 345px;
-  background-color: #ffffff;
+  background-color: #F8F9FA;
 }
 
 .container .heading2 {
@@ -255,14 +255,14 @@
   justify-content: center;
   width: 100%;
   height: 600px;
-  background-color: #ffffff;
+  background-color: #F8F9FA;
 }
 
 .container .card {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 400px;
+  width: 600px;
   height: auto;
   border-radius: 12px;
 }
@@ -276,6 +276,13 @@
 .container .card-info {
   width: 50%;
   background-color: #F1F3F5;
+}
+
+.container .info {
+  gap: 10px;
+  background-color: #e9ecef;
+  width: 280px;
+  height: auto;
 }
 
 .container footer {

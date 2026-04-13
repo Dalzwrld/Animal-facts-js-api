@@ -10,11 +10,12 @@ const animal = document.querySelector(".animal");
 
 btn.addEventListener("click", () => {
     saveToLocalStorage();
-    displayAnimal();
+    getAnimal();
+    renderAnimal();
 });
 
 
-async function displayAnimal() {
+async function getAnimal() {
     const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
 
     const endpoint = `https://api.api-ninjas.com/v1/animals?name=${randomAnimal}`;
@@ -53,7 +54,7 @@ const lifespan = animal.characteristics.lifespan || " ";
 function renderAnimal() {
     animal.innerHTML = "";
 
-    const card = document.createElement("div");
+    const card = document.createElement("section");
 
     card.innerHTML = `
         <img src="${imgUrl}" alt="${name}">
@@ -114,18 +115,10 @@ function renderAnimal() {
                     </tr>
                 </table>
             </div>
-            
-            <button class="update" type="submit">
-                <div class="btn-text">
-                    Pick another one
-                </div>
-            </button
         </div>
     `;
 
     animal.appendChild(card);
-
-    updateAnimal();
 }
 
 
@@ -152,10 +145,6 @@ for(let key in taxonomy) {
 
 
 const locationTxt = locations.length > 0 ? locations.join(", ") : "Not available";
-
-function updateAnimal(params) {
-    
-}
 
 function saveToLocalStorage() {
     localStorage.setItem("animal", JSON.stringify(fauna));
