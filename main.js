@@ -45,6 +45,14 @@ function renderAnimal(animal) {
     const group = animal.characteristics.group || " ";
     const lifespan = animal.characteristics.lifespan || " ";
 
+    const kingdom = animal.characteristics.kingdom || " ";
+    const phylum = animal.characteristics.phylum || " ";
+    const className = animal.characteristics.className || " ";
+    const order = animal.characteristics.order || " ";
+    const family = animal.characteristics.family || " ";
+    const genus = animal.characteristics.genus || " ";
+    const scientificName = animal.characteristics.scientificName || " ";
+
     let taxonomyItems = "";
 
     for (let key in animal.taxonomy) {
@@ -142,7 +150,7 @@ function renderAnimal(animal) {
                     <div class="genus2">Genus</div>
                     <div class="genus-name"><i>Acinonyx</i></div>
                 </div>
-                
+
                 <div class="scientific-name">
                     <div class="scientific-name2">Scientific name</div>
                     <div class="scientific-name3"><i>Acinonyx jupatus</i></div>
