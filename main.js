@@ -5,29 +5,30 @@ const animals = ["lion", "cat", "dog", "tiger", "elephant",];
 const btn = document.querySelector(".discover-btn");
 const animalContainer = document.querySelector(".animal-result");
 
+const endpoint = `https://api.api-ninjas.com/v1/animals?name=${randomAnimal}`;
 
 async function getAnimal() {
     const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
 
-    const endpoint = `https://api.api-ninjas.com/v1/animals?name=${randomAnimal}`;
 
     try {
-        const response = await fetch(endpoint, {
+        fetch(endpoint, {
             method: "GET",
             headers: {
                 "X-API-KEY": API_key
             }
-        });
+        })
+        .then(() => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`)
+            }
+        })
 
         const data = await response.json();
 
         setTimeout(() => {
             renderAnimal(data[0]);
         }, 800);
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`)
-        }
     } catch (error) {
         console.error("Error fetching your animal:", error);
     }
@@ -76,7 +77,7 @@ function renderAnimal(animal) {
                </div>
                 <div class="habitat">
                     <div class="habitat2">Habitat</div>
-                    <div class="habitat-name-grasslands">habitat-name grasslands</div>
+                    <div class="habitat-name-grasslands">habitat-name</div>
                 </div>
                 <div class="diet">
                     <div class="diet2">Diet</div>
@@ -106,31 +107,31 @@ function renderAnimal(animal) {
                 </div>
                 <div class="kingdom">
                     <div class="kingdom2">Kingdom</div>
-                    <div class="kingdom-name">Animalia</div>
+                    <div class="kingdom-name"><i>Animalia</i></div>
                 </div>
                 <div class="phylum">
                     <div class="phylum2">Phylum</div>
-                    <div class="phylum-name">Chordata</div>
+                    <div class="phylum-name"><i>Chordata</i></div>
                 </div>
                 <div class="class">
                     <div class="class2">Class</div>
-                    <div class="class-name">Mammalia</div>
+                    <div class="class-name"><i>Mammalia</i></div>
                 </div>
                 <div class="order">
                     <div class="order2">Order</div>
-                    <div class="order-name">Carnivora</div>
+                    <div class="order-name"><i>Carnivora</i></div>
                 </div>
                 <div class="family">
                     <div class="family2">Family</div>
-                    <div class="family-name">Felidae</div>
+                    <div class="family-name"><i>Felidae</i></div>
                 </div>
                 <div class="genus">
                     <div class="genus2">Genus</div>
-                    <div class="genus-name">Acinonyx</div>
+                    <div class="genus-name"><i>Acinonyx</i></div>
                 </div>
                 <div class="scientific-name">
                     <div class="scientific-name2">Scientific name</div>
-                    <div class="scientific-name3">Acinonyx jupatus</div>
+                    <div class="scientific-name3"><i>Acinonyx jupatus</i></div>
                 </div>
             </div>
         </div>
