@@ -7,14 +7,15 @@ const animalContainer = document.querySelector(".card-section");
 
 const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
 
-const endpoint = `https://api.api-ninjas.com/v1/animals`;
 
 async function getAnimal() {
+    const endpoint = `https://api.api-ninjas.com/v1/animals`;
+    
     try {
         fetch(endpoint, {
             method: "GET",
             headers: {
-                "X-Api-Key": "API_key",
+                "X-Api-Key": API_key
             }
         })
         .then(() => {
