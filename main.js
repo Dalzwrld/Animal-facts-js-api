@@ -28,8 +28,8 @@ async function displayAnimal() {
 
         const animal = data[0];
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`)
+        if (!animal.response.ok) {
+            throw new Error(`HTTP error! Status: ${animal.response.status}`)
         }
     } catch (error) {
         console.error("Error fetching your animal:", error);
@@ -48,11 +48,11 @@ const group = animal.characteristics.group || " ";
 const lifespan = animal.characteristics.lifespan || " ";
 
 function renderAnimal() {
-    animal.innerHTML
-}
+    animal.innerHTML = "";
 
-result.innerHTML = `
-    <div class="card">
+    const card = document.createElement("div");
+
+    card.innerHTML = `
         <img src="${imgUrl}" alt="${name}">
 
         <div class="card-info">
@@ -112,8 +112,11 @@ result.innerHTML = `
                 </table>
             </div>
         </div>
-    </div>
-`;
+    `;
+
+    animal.appendChild(card);
+}
+
 
 function changeLabel(text) {
     return text.split("_").map(word => word[0].toUpperCase + word.slice(1)).join(" ");
