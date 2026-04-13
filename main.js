@@ -114,13 +114,13 @@ function renderAnimal() {
                     </tr>
                 </table>
             </div>
+            
+            <button class="update" type="submit">
+                <div class="btn-text">
+                    Pick another one
+                </div>
+            </button
         </div>
-
-        <button class="update" type="submit">
-            <div class="btn-text">
-                Pick another one
-            </div>
-        </button
     `;
 
     animal.appendChild(card);
