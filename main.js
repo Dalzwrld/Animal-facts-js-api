@@ -86,37 +86,37 @@ function renderAnimal(animal) {
                 <table>
                     <tr>
                         <td>
-                            <p>Habitat</p>
+                            Habitat
                         </td>
                         <td>
-                            <p>${habitat}</p>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <p>Diet</p>
-                        </td>
-                        <td>
-                            <p>${diet}</p>
+                            ${habitat}
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <p>Group</p>
+                            Diet
                         </td>
                         <td>
-                            <p>${group}</p>
+                            ${diet}
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <p>Lifespan</p>
+                            Group
                         </td>
                         <td>
-                            <p>${lifespan}</p>
+                            ${group}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Lifespan
+                        </td>
+                        <td>
+                            ${lifespan}
                         </td>
                     </tr>
                 </table>
