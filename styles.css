@@ -372,7 +372,7 @@
   position: relative;
 }
 
-.location0, .location1, .location2, .location3 {
+.location0, .location1, .location2, .location3, .location-name {
   color: #000000;
   text-align: left;
   font-family: var(--main-text-font-family, "Inter-Bold", sans-serif);
@@ -386,15 +386,7 @@
 }
 
 .location-name {
-  color: #000000;
-  text-align: left;
-  font-family: var(--paragraphs-font-family, "Inter-Regular", sans-serif);
-  font-size: var(--paragraphs-font-size, 16px);
-  font-weight: var(--paragraphs-font-weight, 400);
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-self: stretch;
 }
 
 .kingdom, .phylum, .class, .order, .family, .genus, .scientific-name {
@@ -407,7 +399,7 @@
   position: relative;
 }
 
-.kingdom2, .phylum2, .class2, .order2, .family2, .genus2, .scientific-name2 {
+.kingdom2, .phylum2, .class2, .order2, .family2, .genus2, .scientific-name2, .kingdom-name, .phylum-name, .class-name, .order-name, .family-name, .genus-name, .scientific-name3 {
   color: #000000;
   text-align: left;
   font-family: var(--main-text-font-family, "Inter-Bold", sans-serif);
@@ -421,15 +413,7 @@
 }
 
 .kingdom-name, .phylum-name, .class-name, .order-name, .family-name, .genus-name, .scientific-name3 {
-  color: #000000;
-  text-align: left;
-  font-family: var(--paragraphs-font-family, "Inter-Regular", sans-serif);
-  font-size: var(--paragraphs-font-size, 16px);
-  font-weight: var(--paragraphs-font-weight, 400);
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-self: stretch;
 }
 
 .container footer {
