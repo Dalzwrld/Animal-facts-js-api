@@ -8,37 +8,6 @@ const btn = document.querySelector(".discover-btn");
 
 const animal = document.querySelector(".animal");
 
-btn.addEventListener("click", async () => {
-    saveToLocalStorage();
-    getAnimal();
-    renderAnimal();
-});
-
-
-async function getAnimal() {
-    const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
-
-    const endpoint = `https://api.api-ninjas.com/v1/animals?name=${randomAnimal}`;
-
-    try {
-        const response = await fetch(endpoint, {
-            method: "GET",
-            headers: {
-                "X-API-KEY": API_key
-            }
-        });
-
-        const data = await response.json();
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`)
-        }
-    } catch (error) {
-        console.error("Error fetching your animal:", error);
-        document.querySelector().textContent = "Unable to retrieve animal right now."
-    }
-}
-
 
 const name = animal.name || " ";
 const taxonomy = animal.taxonomy || {};
@@ -54,7 +23,7 @@ function renderAnimal() {
     animal.innerHTML = "";
 
     setTimeout(() => {
-        fetch("https://api-ninjas.com/api/animals").then(response => response.json()).then(data => {
+        fetch("https://api.api-ninjas.com/v1/animals").then(response => response.json()).then(data => {
             const animal = data[0];
 
             const name = data.name;
@@ -83,7 +52,7 @@ function renderAnimal() {
             }
 
             for(let key in taxonomy) {
-                const label = formatLabel(key);
+                const label = changeLabel(key);
                 taxonomyItems += `
                     <table>
                         <tr>
@@ -167,6 +136,35 @@ function renderAnimal() {
     animal.appendChild(card);
 }
 
+async function getAnimal() {
+    const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
+
+    const endpoint = `https://api.api-ninjas.com/v1/animals?name=${randomAnimal}`;
+
+    try {
+        const response = await fetch(endpoint, {
+            method: "GET",
+            headers: {
+                "X-API-KEY": API_key
+            }
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`)
+        }
+    } catch (error) {
+        console.error("Error fetching your animal:", error);
+        document.querySelector().textContent = "Unable to retrieve animal right now."
+    }
+}
+
+btn.addEventListener("click", async () => {
+    saveToLocalStorage();
+    getAnimal();
+    renderAnimal();
+});
 
 function saveToLocalStorage() {
     localStorage.setItem("animal", JSON.stringify(fauna));
