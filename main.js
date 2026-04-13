@@ -6,17 +6,6 @@ const btn = document.querySelector(".discover-btn");
 const animalContainer = document.querySelector(".animal-result");
 
 
-const name = animal.name || " ";
-const taxonomy = animal.taxonomy || {};
-const locations = animal.locations || [];
-const characteristics = animal.characteristics || {};
-
-const habitat = animal.characteristics.habitat || " ";
-const diet = animal.characteristics.diet || " ";
-const group = animal.characteristics.group || " ";
-const lifespan = animal.characteristics.lifespan || " ";
-
-
 async function getAnimal() {
     const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
 
@@ -45,61 +34,37 @@ async function getAnimal() {
 }
 
 
-function renderAnimal() {
-    animal.innerHTML = "";
+function renderAnimal(animal) {
+    const name = animal.name || " ";
+    const taxonomy = animal.taxonomy || {};
+    const locations = animal.locations?.join(", ") || [];
+    const characteristics = animal.characteristics || {};
 
-    setTimeout(() => {
-        fetch("https://api.api-ninjas.com/v1/animals").then(response => response.json()).then(data => {
-            const animal = data[0];
+    const habitat = animal.characteristics.habitat || " ";
+    const diet = animal.characteristics.diet || " ";
+    const group = animal.characteristics.group || " ";
+    const lifespan = animal.characteristics.lifespan || " ";
 
-            const name = data.name;
+    let taxonomyItems = "";
 
-            const locationTxt = locations.length > 0 ? locations.join(", ") : "Not available";
+    for (let key in animal.taxonomy) {
+        taxonomyItems += `
+            <table>
+                <tr>
+                    <td>
+                        <p>${label}</p>
+                    </td>
+                    <td>
+                        <p>${taxonomy[key]}</p>
+                    </td>
+                </tr>
+            </table>
+        `;
+    }
 
-            const taxonomy = {
-                kingdom: data.kingdom,
-                phylum: data.phylum,
-                class: data.class,
-                order: data.order,
-                family: data.family,
-                genus: data.genus,
-                scientific_name: data.scientific_name
-            };
+    const container = document.createElement("section");
 
-            const characteristics = {
-                habitat: data.habitat,
-                diet: data.diet,
-                group: data.group,
-                lifespan: data.lifespan,
-            };
-
-            function changeLabel(text) {
-                return text.split("_").map(word => word[0].toUpperCase + word.slice(1)).join(" ");
-            }
-
-            for(let key in taxonomy) {
-                const label = changeLabel(key);
-                taxonomyItems += `
-                    <table>
-                        <tr>
-                            <td>
-                                <p>${label}</p>
-                            </td>
-                            <td>
-                                <p>${taxonomy[key]}</p>
-                            </td>
-                        </tr>
-                    </table>
-                `;
-            }
-        })
-    })
-
-    const card = document.createElement("section");
-
-    card.innerHTML = `
-        <img src="${imgUrl}" alt="${name}">
-
+    container.innerHTML = `
         <div class="card-info">
             <h2>${name}</h2>
 
@@ -112,7 +77,7 @@ function renderAnimal() {
             <div class="info location">
                 <h3>Locations</h3>
 
-                ${locationTxt}
+                ${locations}
             </div>
 
             <div class="info characteristics">
@@ -159,16 +124,11 @@ function renderAnimal() {
         </div>
     `;
 
-    animal.appendChild(card);
+    animal.appendChild(container);
 }
 
 
-btn.addEventListener("click", async () => {
-    saveToLocalStorage();
+btn.addEventListener("click", () => {
     getAnimal();
     renderAnimal();
 });
-
-function saveToLocalStorage() {
-    localStorage.setItem("animal", JSON.stringify(fauna));
-}
