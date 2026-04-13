@@ -56,6 +56,23 @@ function renderAnimal() {
     setTimeout(() => {
         fetch("https://api-ninjas.com/api/animals").then(response => response.json()).then(data => {
             const animal = data[0];
+
+            const taxonomy = {
+                kingdom: data.kingdom,
+                phylum: data.phylum,
+                class: data.class,
+                order: data.order,
+                family: data.family,
+                genus: data.genus,
+                scientific_name: data.scientific_name
+            };
+
+            const characteristics = {
+                habitat: data.habitat,
+                diet: data.diet,
+                group: data.group,
+                lifespan: data.lifespan,
+            };
         })
     })
 
@@ -131,7 +148,6 @@ function changeLabel(text) {
     return text.split("_").map(word => word[0].toUpperCase + word.slice(1)).join(" ");
 }
 
-const taxonomyItems = "";
 for(let key in taxonomy) {
     const label = formatLabel(key);
     taxonomyItems += `
