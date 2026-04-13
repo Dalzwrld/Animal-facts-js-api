@@ -3,18 +3,18 @@ const API_key = "O6gDOjX0GLmJOBMyTWDoj5RMeMw3Y0LEovT0oWvF";
 const animals = ["lion", "cat", "dog", "tiger", "elephant",];
 
 const btn = document.querySelector(".discover-btn");
-const animalContainer = document.querySelector(".animal-result");
+const animalContainer = document.querySelector(".card-section");
 
 const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
 
-const endpoint = `https://api.api-ninjas.com/v1/animals?name=${randomAnimal}`;
+const endpoint = `https://api.api-ninjas.com/v1/animals`;
 
 async function getAnimal() {
     try {
         fetch(endpoint, {
             method: "GET",
             headers: {
-                "X-API-KEY": API_key
+                "X-Api-Key": "API_key",
             }
         })
         .then(() => {
@@ -56,7 +56,7 @@ function renderAnimal(animal) {
     const container = document.createElement("section");
 
     container.innerHTML = `
-    <div class="card-section">
+    <section class="card-section">
        <div class="animal-name-section">
            <div class="animal-name">${name}</div>
        </div>
@@ -140,7 +140,7 @@ function renderAnimal(animal) {
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     `;
 
     animal.appendChild(container);
