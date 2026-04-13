@@ -26,7 +26,7 @@ async function displayAnimal() {
         const animal = data[0];
 
         if (!animal) {
-            XPathResult.innerHTML = "<p>No animal found. Please try again.</p>";
+            result.innerHTML = "<p>No animal found. Please try again.</p>";
         }
     } catch (error) {
         console.error("Error fetching your animal:", error);
@@ -44,12 +44,28 @@ const diet = animal.characteristics.diet || " ";
 const group = animal.characteristics.group || " ";
 const lifespan = animal.characteristics.lifespan || " ";
 
-let taxonomyItems = "";
-for (let key in taxonomy) {
-    function normalCase() {
-        const item = item.toLowerCase("").split;
-    }
+
+function changeLabel(text) {
+    return text.split("_").map(word => word[0].toUpperCase + word.slice(1)).join(" ");
 }
+
+let taxonomyItems = "";
+for(let key in taxonomy) {
+    const label = formatLabel(key);
+    taxonomyItems += `
+        <table>
+            <tr>
+                <td>
+                    <p>${label}</p>
+                </td>
+                <td>
+                    <p>${taxonomy[key]}</p>
+                </td>
+            </tr>
+        </table>
+    `;
+}
+
 
 const locationTxt = locations.length > 0 ? locations.join(", ") : "Not available";
 
