@@ -69,65 +69,80 @@ function renderAnimal(animal) {
        <div class="animal-name-section">
            <div class="animal-name">Cheetah</div>
        </div>
+
        <div class="card-container">
            <div class="characteristics">
                <div class="title">
                    <div class="characteristics2">Characteristics</div>
                </div>
+
                 <div class="habitat">
                     <div class="habitat2">Habitat</div>
                     <div class="habitat-name-grasslands">habitat-name</div>
                 </div>
+
                 <div class="diet">
                     <div class="diet2">Diet</div>
                     <div class="diet-name">Carnivore</div>
                 </div>
+
                 <div class="group">
                     <div class="group-name">Group</div>
                     <div class="group-name">Mammal</div>
                 </div>
+
                 <div class="lifespan">
                     <div class="lifespan2">Lifespan</div>
                     <div class="lifespantxt">10 - 15 years</div>
                 </div>
             </div>
+
             <div class="locations">
                 <div class="title2">
                     <div class="locations2">Locations</div>
                 </div>
+
                 <div class="loc0">
                     <div class="location0">0</div>
                     <div class="location-name">location-name</div>
                 </div>
             </div>
+
             <div class="taxonomy">
                 <div class="title">
                     <div class="taxonomy2">Taxonomy</div>
                 </div>
+
                 <div class="kingdom">
                     <div class="kingdom2">Kingdom</div>
                     <div class="kingdom-name"><i>Animalia</i></div>
                 </div>
+
                 <div class="phylum">
                     <div class="phylum2">Phylum</div>
                     <div class="phylum-name"><i>Chordata</i></div>
                 </div>
+
                 <div class="class">
                     <div class="class2">Class</div>
                     <div class="class-name"><i>Mammalia</i></div>
                 </div>
+
                 <div class="order">
                     <div class="order2">Order</div>
                     <div class="order-name"><i>Carnivora</i></div>
                 </div>
+
                 <div class="family">
                     <div class="family2">Family</div>
                     <div class="family-name"><i>Felidae</i></div>
                 </div>
+
                 <div class="genus">
                     <div class="genus2">Genus</div>
                     <div class="genus-name"><i>Acinonyx</i></div>
                 </div>
+                
                 <div class="scientific-name">
                     <div class="scientific-name2">Scientific name</div>
                     <div class="scientific-name3"><i>Acinonyx jupatus</i></div>
