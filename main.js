@@ -6,7 +6,10 @@ const animals = ["lion", "cat", "dog", "tiger", "elephant",];
 
 const btn = document.querySelector(".discover-btn");
 
+const animal = document.querySelector(".animal");
+
 btn.addEventListener("click", displayAnimal);
+
 
 async function displayAnimal() {
     const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
@@ -25,8 +28,8 @@ async function displayAnimal() {
 
         const animal = data[0];
 
-        if (!animal) {
-            result.innerHTML = "<p>No animal found. Please try again.</p>";
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`)
         }
     } catch (error) {
         console.error("Error fetching your animal:", error);
@@ -44,30 +47,9 @@ const diet = animal.characteristics.diet || " ";
 const group = animal.characteristics.group || " ";
 const lifespan = animal.characteristics.lifespan || " ";
 
-
-function changeLabel(text) {
-    return text.split("_").map(word => word[0].toUpperCase + word.slice(1)).join(" ");
+function renderAnimal() {
+    animal.innerHTML
 }
-
-let taxonomyItems = "";
-for(let key in taxonomy) {
-    const label = formatLabel(key);
-    taxonomyItems += `
-        <table>
-            <tr>
-                <td>
-                    <p>${label}</p>
-                </td>
-                <td>
-                    <p>${taxonomy[key]}</p>
-                </td>
-            </tr>
-        </table>
-    `;
-}
-
-
-const locationTxt = locations.length > 0 ? locations.join(", ") : "Not available";
 
 result.innerHTML = `
     <div class="card">
@@ -132,3 +114,27 @@ result.innerHTML = `
         </div>
     </div>
 `;
+
+function changeLabel(text) {
+    return text.split("_").map(word => word[0].toUpperCase + word.slice(1)).join(" ");
+}
+
+let taxonomyItems = "";
+for(let key in taxonomy) {
+    const label = formatLabel(key);
+    taxonomyItems += `
+        <table>
+            <tr>
+                <td>
+                    <p>${label}</p>
+                </td>
+                <td>
+                    <p>${taxonomy[key]}</p>
+                </td>
+            </tr>
+        </table>
+    `;
+}
+
+
+const locationTxt = locations.length > 0 ? locations.join(", ") : "Not available";
