@@ -5,12 +5,11 @@ const animals = ["lion", "cat", "dog", "tiger", "elephant",];
 const btn = document.querySelector(".discover-btn");
 const animalContainer = document.querySelector(".animal-result");
 
+const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
+
 const endpoint = `https://api.api-ninjas.com/v1/animals?name=${randomAnimal}`;
 
 async function getAnimal() {
-    const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
-
-
     try {
         fetch(endpoint, {
             method: "GET",
