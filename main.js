@@ -8,7 +8,10 @@ const btn = document.querySelector(".discover-btn");
 
 const animal = document.querySelector(".animal");
 
-btn.addEventListener("click", displayAnimal);
+btn.addEventListener("click", () => {
+    saveToLocalStorage();
+    displayAnimal();
+});
 
 
 async function displayAnimal() {
@@ -112,9 +115,17 @@ function renderAnimal() {
                 </table>
             </div>
         </div>
+
+        <button class="update" type="submit">
+            <div class="btn-text">
+                Pick another one
+            </div>
+        </button
     `;
 
     animal.appendChild(card);
+
+    updateAnimal();
 }
 
 
@@ -122,7 +133,7 @@ function changeLabel(text) {
     return text.split("_").map(word => word[0].toUpperCase + word.slice(1)).join(" ");
 }
 
-let taxonomyItems = "";
+const taxonomyItems = "";
 for(let key in taxonomy) {
     const label = formatLabel(key);
     taxonomyItems += `
@@ -141,3 +152,11 @@ for(let key in taxonomy) {
 
 
 const locationTxt = locations.length > 0 ? locations.join(", ") : "Not available";
+
+function updateAnimal(params) {
+    
+}
+
+function saveToLocalStorage() {
+    localStorage.setItem("animal", JSON.stringify(fauna));
+}
