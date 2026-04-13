@@ -338,7 +338,7 @@
   position: relative;
 }
 
-.habitat2, .diet2, .group-name, .lifespan2 {
+.habitat2, .diet2, .group-name, .lifespan2, .habitat-name-grasslands, .carnivore, .diet-name, .lifespantxt {
   color: #000000;
   text-align: left;
   font-family: var(--main-text-font-family, "Inter-Bold", sans-serif);
@@ -350,16 +350,8 @@
   justify-content: flex-start;
 }
 
-.habitat-name-grasslands, .carnivore, .diet-name, .lifespantxt {
-  color: #000000;
-  text-align: left;
-  font-family: var(--paragraphs-font-family, "Inter-Regular", sans-serif);
-  font-size: var(--paragraphs-font-size, 16px);
-  font-weight: var(--paragraphs-font-weight, 400);
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+.habitat-name, .group-name, .diet-name, .lifespantxt {
+  align-self: stretch;
 }
 
 .loc0, .loc1, .loc2, .loc3{

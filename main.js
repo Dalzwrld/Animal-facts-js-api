@@ -80,11 +80,11 @@ function renderAnimal(animal) {
                 </div>
                 <div class="diet">
                     <div class="diet2">Diet</div>
-                    <div class="carnivore">Carnivore</div>
+                    <div class="diet-name">Carnivore</div>
                 </div>
                 <div class="group">
                     <div class="group-name">Group</div>
-                    <div class="diet-name">diet-name</div>
+                    <div class="group-name">Mammal</div>
                 </div>
                 <div class="lifespan">
                     <div class="lifespan2">Lifespan</div>
