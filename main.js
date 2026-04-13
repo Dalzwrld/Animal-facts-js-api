@@ -1,4 +1,4 @@
-const API_key = "O6gDOjX0GLmJOBMyTWDoj5RMeMw3Y0LEovT0oWvF";
+const API_key = `O6gDOjX0GLmJOBMyTWDoj5RMeMw3Y0LEovT0oWvF`;
 
 const animals = ["lion", "cat", "dog", "tiger", "elephant",];
 
@@ -8,11 +8,9 @@ const animalContainer = document.querySelector(".card-section");
 const randomAnimal = animals[Math.floor(Math.random() * animals.length)];
 
 
-async function getAnimal() {
-    const endpoint = `https://api.api-ninjas.com/v1/animals`;
-    
+async function getAnimal() {    
     try {
-        fetch(endpoint, {
+        fetch(`https://api.api-ninjas.com/v1/animals`, {
             method: "GET",
             headers: {
                 "X-Api-Key": API_key
