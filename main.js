@@ -73,6 +73,26 @@ function renderAnimal() {
                 group: data.group,
                 lifespan: data.lifespan,
             };
+
+            function changeLabel(text) {
+                return text.split("_").map(word => word[0].toUpperCase + word.slice(1)).join(" ");
+            }
+
+            for(let key in taxonomy) {
+                const label = formatLabel(key);
+                taxonomyItems += `
+                    <table>
+                        <tr>
+                            <td>
+                                <p>${label}</p>
+                            </td>
+                            <td>
+                                <p>${taxonomy[key]}</p>
+                            </td>
+                        </tr>
+                    </table>
+                `;
+            }
         })
     })
 
@@ -143,26 +163,6 @@ function renderAnimal() {
     animal.appendChild(card);
 }
 
-
-function changeLabel(text) {
-    return text.split("_").map(word => word[0].toUpperCase + word.slice(1)).join(" ");
-}
-
-for(let key in taxonomy) {
-    const label = formatLabel(key);
-    taxonomyItems += `
-        <table>
-            <tr>
-                <td>
-                    <p>${label}</p>
-                </td>
-                <td>
-                    <p>${taxonomy[key]}</p>
-                </td>
-            </tr>
-        </table>
-    `;
-}
 
 
 const locationTxt = locations.length > 0 ? locations.join(", ") : "Not available";
