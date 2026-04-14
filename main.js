@@ -69,7 +69,7 @@ function renderAnimal(animal) {
         </div>
     `).join("");
 
-    const container = document.createElement("section");
+    const container = document.createElement("div");
 
     container.innerHTML = `
        <div class="animal-name-section">
