@@ -1,11 +1,12 @@
 const API_KEY = `O6gDOjX0GLmJOBMyTWDoj5RMeMw3Y0LEovT0oWvF`;
 
-const searchInput = document.querySelector(".search-input");
-const searchBtn = document.querySelector(".discover-btn");
+const searchInput = document.getElementById("search-input");
+const searchBtn = document.getElementById("search-btn");
 const animalContainer = document.querySelector(".card-section");
 
 async function getAnimal() { 
-    const query = searchInput.ariaValueMax.trim();
+    const query = searchInput.value.trim();
+    console.log("Searching for:", query);
     
     if (!query) {
         showError("Please enter an animal name first");
@@ -21,7 +22,7 @@ async function getAnimal() {
                 method: "GET",
                 headers: { "X-Api-Key": API_KEY }
         })
-        
+
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`)
         }
@@ -71,7 +72,6 @@ function renderAnimal(animal) {
     const container = document.createElement("section");
 
     container.innerHTML = `
-    <section class="card-section">
        <div class="animal-name-section">
            <div class="animal-name">${name}</div>
        </div>
@@ -151,18 +151,17 @@ function renderAnimal(animal) {
                 </div>
             </div>
         </div>
-    </section>
     `;
 
     animal.appendChild(container);
 }
 
 function showError(message) {
-    let error1 = document.querySelector(".search-error");
+    let error1 = document.getElementById(".search-error");
 
     if (!error1) {
         error1 = document.createElement("p");
-        error1.class = "search-error";
+        error1.id = "search-error";
         error1.style.p = `
             font-family: var(--paragraphs-font-family);
             font-size: var(--paragraphs-font-size);
