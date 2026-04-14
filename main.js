@@ -181,7 +181,7 @@ function clearError() {
     if (error1) error1.textContent = "";
 }
 
-searchBtn.addEventListener("click", () => {
+searchBtn.addEventListener("submit", () => {
     getAnimal();
 });
 
