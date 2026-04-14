@@ -62,12 +62,12 @@ function renderAnimal(animal) {
     const scientificName = animal.taxonomy?.scientificName || "N/A";
 
     const locationItems = (animal.locations || [])
-        .map((loc, i) => `
+    .map((loc, i) => `
         <div class="loc${i}">
             <div class="location${i}">${i}</div>
             <div class="location-name">${loc}</div>
         </div>
-        `).join("");
+    `).join("");
 
     const container = document.createElement("section");
 
@@ -80,7 +80,7 @@ function renderAnimal(animal) {
        <div class="card-container">
            <div class="characteristics">
                <div class="title">
-                   <div class="characteristics2">${characteristics}</div>
+                   <div class="characteristics2">Characteristics</div>
                </div>
 
                 <div class="habitat">
@@ -108,11 +108,7 @@ function renderAnimal(animal) {
                 <div class="title2">
                     <div class="locations2">Locations</div>
                 </div>
-
-                <div class="loc0">
-                    <div class="location0">0</div>
-                    <div class="location-name">${locations}</div>
-                </div>
+                ${locationItems}
             </div>
 
             <div class="taxonomy">
