@@ -93,7 +93,7 @@ function renderAnimal(animal) {
                 </div>
 
                 <div class="group">
-                    <div class="group-name">Group</div>
+                    <div class="group2">Group</div>
                     <div class="group-name">${group}</div>
                 </div>
 

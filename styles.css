@@ -239,6 +239,7 @@
   padding: 32px 200px 32px 200px;
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 12px;
   align-items: flex-start;
   justify-content: flex-start;
@@ -369,7 +370,7 @@
   position: relative;
 }
 
-.habitat2, .diet2, .group-name, .lifespan2, .habitat-name, .diet-name, .group-name .lifespantxt {
+.habitat2, .diet2, .group2, .lifespan2, .habitat-name, .diet-name, .group-name, .lifespantxt {
   color: #000000;
   text-align: left;
   font-family: var(--main-text-font-family, "Inter-Bold", sans-serif);
@@ -383,6 +384,8 @@
 
 .habitat-name, .group-name, .diet-name, .lifespantxt {
   align-self: stretch;
+  font-weight: var(--paragraphs-font-weight);
+  font-family: var(--paragraphs-font-family);
 }
 
 .loc0, .loc1, .loc2, .loc3 {
@@ -410,6 +413,8 @@
 
 .location-name {
   align-self: stretch;
+  font-weight: var(--paragraphs-font-weight);
+  font-family: var(--paragraphs-font-family);
 }
 
 .kingdom, .phylum, .class, .order, .family, .genus, .scientific-name {
@@ -437,6 +442,8 @@
 
 .kingdom-name, .phylum-name, .class-name, .order-name, .family-name, .genus-name, .scientific-name3 {
   align-self: stretch;
+  font-weight: var(--paragraphs-font-weight);
+  font-family: var(--paragraphs-font-family);
 }
 
 .container footer {
