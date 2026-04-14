@@ -21,11 +21,10 @@ async function getAnimal() {
                 method: "GET",
                 headers: { "X-Api-Key": API_KEY }
         })
-        .then(() => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`)
-            }
-        })
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`)
+        }
 
         const data = await response.json();
 
