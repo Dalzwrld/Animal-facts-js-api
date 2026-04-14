@@ -178,7 +178,15 @@ function showError(message) {
     error1.textContent = message;
 }
 
-btn.addEventListener("click", () => {
+function clearError() {
+    const error1 = document.querySelector(".search-error");
+    if (error1) error1.textContent = "";
+}
+
+searchBtn.addEventListener("click", () => {
     getAnimal();
-    renderAnimal();
+});
+
+searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") getAnimal();
 });
