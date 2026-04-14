@@ -153,7 +153,7 @@ function renderAnimal(animal) {
         </div>
     `;
 
-    animal.appendChild(container);
+    animalContainer.appendChild(container);
 }
 
 function showError(message) {
