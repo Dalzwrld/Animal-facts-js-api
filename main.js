@@ -20,7 +20,7 @@ async function getAnimal() {
             `https://api.api-ninjas.com/v1/animals?name=${encodeURIComponent(query)}`, 
             {
                 method: "GET",
-                headers: { "X-Api-Key": API_KEY }
+                headers: {"X-Api-Key": API_KEY}
         })
 
         if (!response.ok) {
@@ -157,7 +157,7 @@ function renderAnimal(animal) {
 }
 
 function showError(message) {
-    let error1 = document.getElementById(".search-error");
+    let error1 = document.getElementById("search-error");
 
     if (!error1) {
         error1 = document.createElement("p");
