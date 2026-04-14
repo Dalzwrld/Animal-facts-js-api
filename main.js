@@ -185,6 +185,10 @@ searchBtn.addEventListener("submit", () => {
     getAnimal();
 });
 
+searchBtn.addEventListener("submit", (e) => {
+    e.preventDefault();
+});
+
 searchInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") getAnimal();
 });

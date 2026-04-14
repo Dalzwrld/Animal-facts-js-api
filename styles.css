@@ -332,7 +332,7 @@
   gap: 12px;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 347px;
+  width: auto;
   height: auto;
   position: relative;
 }
@@ -350,7 +350,6 @@
 .characteristics2, .taxonomy2, .locations2 {
   color: #000000;
   text-align: left;
-  font-family: "PlayfairDisplay-Medium", sans-serif;
   font-size: 18px;
   font-weight: 500;
   position: relative;
@@ -358,6 +357,9 @@
   align-self: stretch;
   align-items: flex-end;
   justify-content: flex-start;
+  font-family: var(--main-text-font-family);
+  font-size: var(--main-text-font-size, 20px);
+  font-weight: var(--main-heading-font-weight);
 }
 
 .habitat, .diet, .group, .lifespan {
@@ -386,6 +388,11 @@
   align-self: stretch;
   font-weight: var(--paragraphs-font-weight);
   font-family: var(--paragraphs-font-family);
+}
+
+.habitat2 {
+  position: relative;
+  width: auto;
 }
 
 .loc0, .loc1, .loc2, .loc3 {
