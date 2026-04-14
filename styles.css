@@ -291,7 +291,7 @@
   padding-left: 24px;
 }
 
-.search-input {
+#search-input {
   flex: 1;
   border: none;
   outline: none;
@@ -302,7 +302,7 @@
   color: #212529;
 }
 
-.search-input::placeholder {
+#search-input::placeholder {
   color: #abd5db;
 }
 
