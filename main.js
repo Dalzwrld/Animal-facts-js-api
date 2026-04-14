@@ -29,11 +29,18 @@ async function getAnimal() {
 
         const data = await response.json();
 
+        if (!data || data.length === 0) {
+            showError(`No results found for "${query}". Try a different name`);
+            return;
+        }
+
         setTimeout(() => {
             renderAnimal(data[0]);
         }, 800);
+
     } catch (error) {
         console.error("Error fetching your animal:", error);
+        showError("Something went wrong. Please try again.");
     }
 }
 
