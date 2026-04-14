@@ -214,23 +214,9 @@
   justify-content: center;
   gap: 10px;
   padding: 15px 65px;
-  background-color: #1b4332;
   border-radius: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 6px #00000080;
-}
-
-.container .btn-text {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: var(--buttons-font-family);
-  font-weight: var(--buttons-font-weight);
-  color: #ffffff;
-  font-size: var(--buttons-font-size);
-  letter-spacing: var(--buttons-letter-spacing);
-  line-height: var(--buttons-line-height);
-  font-style: var(--buttons-font-style);
 }
 
 .container .heading3 {
@@ -290,6 +276,50 @@
   justify-content: flex-start;
   height: 610px;
   position: relative;
+}
+
+.search-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 440px;
+  height: 59px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  box-shadow: 2px 2px 6px #00000080;
+  overflow: hidden;
+  padding-left: 24px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-family: var(--paragraphs-font-family);
+  font-size: var(--paragraphs-font-size);
+  font-weight: var(--paragraphs-font-weight);
+  color: #212529;
+}
+
+.search-input::placeholder {
+  color: #abd5db;
+}
+
+.container .discover-btn {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  padding: 15px 32px;
+  background-color: #1b4332;
+}
+
+.container .discover-btn img {
+  width: 20px;
+  height: 20px;
 }
 
 .characteristics, .taxonomy, .locations {
@@ -418,7 +448,7 @@
 .container .copyright {
   position: absolute;
   top: 18px;
-  left: 590px;
+  left: 620px;
   font-family: var(--paragraphs-font-family);
   font-weight: var(--paragraphs-font-weight);
   color: var(--paragraphs-texts);
@@ -460,7 +490,7 @@
 .container .icon-by {
   position: absolute;
   top: 18px;
-  left: 623px;
+  left: 700px;
   font-family: var(--paragraphs-font-family);
   font-weight: var(--paragraphs-font-weight);
   color: var(--paragraphs-texts);
@@ -469,6 +499,7 @@
   line-height: var(--paragraphs-line-height);
   white-space: nowrap;
   font-style: var(--paragraphs-font-style);
+  text-align: center;
 }
 
 .container .icon-by a {
