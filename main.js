@@ -46,23 +46,28 @@ async function getAnimal() {
 
 
 function renderAnimal(animal) {
-    const name = animal.name || " ";
-    const taxonomy = animal.taxonomy || {};
-    const locations = animal.locations?.join(", ") || [];
-    const characteristics = animal.characteristics || {};
+    const name = animal.name || "Unknown";
 
-    const habitat = animal.characteristics.habitat || " ";
-    const diet = animal.characteristics.diet || " ";
-    const group = animal.characteristics.group || " ";
-    const lifespan = animal.characteristics.lifespan || " ";
+    const habitat = animal.characteristics?.habitat || "N/A";
+    const diet = animal.characteristics?.diet || "N/A";
+    const group = animal.characteristics?.group || "N/A";
+    const lifespan = animal.characteristics?.lifespan || "N/A";
 
-    const kingdom = animal.characteristics.kingdom || " ";
-    const phylum = animal.characteristics.phylum || " ";
-    const className = animal.characteristics.className || " ";
-    const order = animal.characteristics.order || " ";
-    const family = animal.characteristics.family || " ";
-    const genus = animal.characteristics.genus || " ";
-    const scientificName = animal.characteristics.scientificName || " ";
+    const kingdom = animal.taxonomy?.kingdom || "N/A";
+    const phylum = animal.taxonomy?.phylum || "N/A";
+    const className = animal.taxonomy?.className || "N/A";
+    const order = animal.taxonomy?.order || "N/A";
+    const family = animal.taxonomy?.family || "N/A";
+    const genus = animal.taxonomy?.genus || "N/A";
+    const scientificName = animal.taxonomy?.scientificName || "N/A";
+
+    const locationItems = (animal.locations || [])
+        .map((loc, i) => `
+        <div class="loc${i}">
+            <div class="location${i}">${i}</div>
+            <div class="location-name">${loc}</div>
+        </div>
+        `).join("");
 
     const container = document.createElement("section");
 
