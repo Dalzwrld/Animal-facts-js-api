@@ -158,6 +158,25 @@ function renderAnimal(animal) {
     animal.appendChild(container);
 }
 
+function showError(message) {
+    let error1 = document.querySelector(".search-error");
+
+    if (!error1) {
+        error1 = document.createElement("p");
+        error1.class = "search-error";
+        error1.style.p = `
+            font-family: var(--paragraphs-font-family);
+            font-size: var(--paragraphs-font-size);
+            color: #c0392b;
+            margin-top: 6px;
+        `;
+
+        const wrapper = document.querySelector(".search-wrapper");
+        wrapper.insertAdjacentElement("afterend", error1);
+    }
+
+    error1.textContent = message;
+}
 
 btn.addEventListener("click", () => {
     getAnimal();
