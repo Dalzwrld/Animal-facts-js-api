@@ -44,6 +44,9 @@ async function getAnimal() {
     }
 }
 
+searchBtn.addEventListener("submit", (e) => {
+    e.preventDefault();
+});
 
 function renderAnimal(animal) {
     const name = animal.name || "Unknown";
@@ -183,10 +186,6 @@ function clearError() {
 
 searchBtn.addEventListener("submit", () => {
     getAnimal();
-});
-
-searchBtn.addEventListener("submit", (e) => {
-    e.preventDefault();
 });
 
 searchInput.addEventListener("keydown", (e) => {
