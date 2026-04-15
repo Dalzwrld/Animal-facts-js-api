@@ -156,6 +156,7 @@ function renderAnimal(animal) {
         </div>
     `;
 
+    animalContainer.style.display = "flex";
     animalContainer.appendChild(container);
 }
 
