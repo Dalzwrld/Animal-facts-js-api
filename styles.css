@@ -538,3 +538,152 @@
 .container .animal-data-by-API a {
     text-decoration: none;
 }
+
+/* ── Saved section wrapper ── */
+.saved-section {
+    display: none; /* hidden until first animal is saved */
+    position: relative;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 60px 200px;
+}
+
+.saved-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.saved-heading {
+    position: relative; /* override the absolute from .heading2 */
+    top: auto;
+    left: auto;
+}
+
+.saved-subtext {
+    position: relative;
+    top: auto;
+    left: auto;
+    height: auto;
+    width: 100%;
+    margin-top: 0;
+}
+
+/* ── Grid of saved cards ── */
+.saved-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+/* ── Individual saved card ── */
+.saved-card {
+    background: #f1f3f5;
+    border-radius: 10px;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.saved-card-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.saved-animal-name {
+    font-family: var(--headings-font-family);
+    font-weight: var(--headings-font-weight);
+    font-size: 28px;
+    color: var(--headings-h2);
+}
+
+.saved-card-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* ── Note area ── */
+.saved-note-text {
+    font-family: var(--paragraphs-font-family);
+    font-size: var(--paragraphs-font-size);
+    font-weight: var(--paragraphs-font-weight);
+    color: var(--paragraphs-texts);
+    font-style: italic;
+    min-height: 20px;
+}
+
+.saved-note-text.empty {
+    color: #adb5bd;
+    font-style: italic;
+}
+
+.note-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-family: var(--paragraphs-font-family);
+    font-size: var(--paragraphs-font-size);
+    color: #212529;
+    outline: none;
+    display: none; /* shown only in edit mode */
+    background: #ffffff;
+}
+
+.note-input:focus {
+    border-color: #69af50;
+}
+
+/* ── Action buttons ── */
+.btn-save-animal,
+.btn-edit-note,
+.btn-save-note,
+.btn-delete-animal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--buttons-font-family);
+    font-weight: var(--buttons-font-weight);
+    font-size: 14px;
+    box-shadow: 2px 2px 6px #00000040;
+    transition: opacity 0.2s;
+}
+
+.btn-save-animal:hover,
+.btn-edit-note:hover,
+.btn-save-note:hover,
+.btn-delete-animal:hover {
+    opacity: 0.85;
+}
+
+.btn-save-animal {
+    background-color: #1b4332;
+    color: #ffffff;
+}
+
+.btn-edit-note {
+    background-color: #ffffff;
+    color: #1b4332;
+    border: 1.5px solid #1b4332;
+}
+
+.btn-save-note {
+    background-color: #69af50;
+    color: #ffffff;
+}
+
+.btn-delete-animal {
+    background-color: #c0392b;
+    color: #ffffff;
+}
