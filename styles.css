@@ -539,9 +539,8 @@
     text-decoration: none;
 }
 
-/* ── Saved section wrapper ── */
 .saved-section {
-    display: none; /* hidden until first animal is saved */
+    display: none;
     position: relative;
     width: 100%;
     background-color: #f8f9fa;
@@ -556,7 +555,7 @@
 }
 
 .saved-heading {
-    position: relative; /* override the absolute from .heading2 */
+    position: relative;
     top: auto;
     left: auto;
 }
@@ -570,7 +569,6 @@
     margin-top: 0;
 }
 
-/* ── Grid of saved cards ── */
 .saved-list {
     display: flex;
     flex-direction: column;
@@ -578,7 +576,6 @@
     width: 100%;
 }
 
-/* ── Individual saved card ── */
 .saved-card {
     background: #f1f3f5;
     border-radius: 10px;
@@ -608,7 +605,6 @@
     gap: 10px;
 }
 
-/* ── Note area ── */
 .saved-note-text {
     font-family: var(--paragraphs-font-family);
     font-size: var(--paragraphs-font-size);
@@ -632,7 +628,7 @@
     font-size: var(--paragraphs-font-size);
     color: #212529;
     outline: none;
-    display: none; /* shown only in edit mode */
+    display: none;
     background: #ffffff;
 }
 
@@ -640,7 +636,6 @@
     border-color: #69af50;
 }
 
-/* ── Action buttons ── */
 .btn-save-animal,
 .btn-edit-note,
 .btn-save-note,
