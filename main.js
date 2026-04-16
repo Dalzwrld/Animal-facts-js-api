@@ -239,6 +239,34 @@ function editNote(id) {
     noteText.style.display = isEditing? "none" : "block";
 }
 
+function saveNote(id) {
+    const input = document.getElementById(`note-input-${id}`);
+    const saveBtn = document.getElementById(`note-save-btn-${id}`);
+    const noteText = document.getElementById(`note-text-${id}`);
+
+    const newNote = input.value.trim();
+
+    const entry = savedAnimals.find(e => e.id === id);
+    if (entry) entry.note = newNote;
+
+    noteText.textContent = newNote || `No note yet. Click "Edit note" to add one.`;
+    noteText.classList.toggle("empty", !newNote);
+    
+    input.style.display = "none";
+    saveBtn.style.display = "none";
+    noteText.style.display = "block";
+}
+
+function deleteAnimal(id) {
+    savedAnimals = savedAnimals.filter(entry => entry.id !== id);
+
+    renderSavedList();
+
+    if (savedAnimals.length === 0) {
+        savedSection.style.display = "none";
+    }
+}
+
 function showError(message) {
     let error1 = document.getElementById("search-error");
 
