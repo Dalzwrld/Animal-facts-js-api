@@ -196,7 +196,47 @@ function renderSavedList() {
         const card = document.createElement("div");
         card.classList.add("saved-card");
         card.id = `saved-card-${entry.id}`;
-    })
+
+        card.innerHTML = `
+            <div class="saved-card-top">
+                <div class="saved-animal-name">${entry.animal.name}</div>
+                <div class="saved-card-actions">
+                    <button class="btn-edit-note" onclick="toggleEditNote(${entry.id})">
+                        Edit note
+                    </button>
+                    <button class="btn-delete-animal" onclick="deleteAnimal(${entry.id})">
+                        Remove
+                    </button>
+                </div>
+            </div>
+
+            <div class="saved-note-text ${entry.note ? "" : "empty"}" id="note-text-${entry.id}">
+                ${entry.note || "No note yet — click 'Edit note' to add one."}
+            </div>
+
+            <input type="text" class="note-input" id="note-input-${entry.id}" placeholder="Write a note about this animal..." value="${entry.note}"/>
+
+            <div style="display:none;" id="note-save-btn-${entry.id}">
+                <button class="btn-save-note" onclick="saveNote(${entry.id})">
+                    Save note
+                </button>
+            </div>
+        `;
+
+        savedList.appendChild(card);
+    });
+}
+
+function editNote(id) {
+    const input = document.getElementById(`note-input-${id}`);
+    const saveBtn = document.getElementById(`note-save-btn-${id}`);
+    const noteText = document.getElementById(`note-text-${id}`);
+
+    const isEditing = input.style.display === "block";
+
+    input.style.display = isEditing? "none" : "block";
+    saveBtn.style.display = isEditing? "none" : "block";
+    noteText.style.display = isEditing? "none" : "block";
 }
 
 function showError(message) {
