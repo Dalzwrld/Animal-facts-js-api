@@ -4,6 +4,9 @@ const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const animalContainer = document.querySelector(".card-section");
 
+let savedAnimals = [];
+let nextId = 0;
+
 async function getAnimal() { 
     const query = searchInput.value.trim();
     console.log("Searching for:", query);
@@ -34,9 +37,13 @@ async function getAnimal() {
             return;
         }
 
+        const exactMatch = data.find(a => a.name.toLowerCase() === query.toLowerCase());
+
+        const result = exactMatch || data[0];
+
         setTimeout(() => {
-            renderAnimal(data[0]);
-        }, 800);
+            renderAnimal(result);
+        }, 1000);
 
     } catch (error) {
         console.error("Error fetching your animal:", error);
