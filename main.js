@@ -37,7 +37,7 @@ async function getAnimal() {
             return;
         }
 
-        const exactMatch = data.find(a => a.name.toLowerCase() === query.toLowerCase());
+        const exactMatch = data.find(animal => animal.name.toLowerCase() === query.toLowerCase());
 
         const result = exactMatch || data[0];
 
@@ -85,6 +85,12 @@ function renderAnimal(animal) {
        <div class="animal-name-section">
            <div class="animal-name">${name}</div>
        </div>
+
+        <div style="display:flex; justify-content:flex-end; padding: 0 0 12px 0;">
+            <button class="btn-save-animal" onclick="saveAnimal(${JSON.stringify(animal).split('"').join('&quot;')})">
+                + Save to My Animals
+            </button>
+        </div>
 
        <div class="card-container">
            <div class="characteristics">
@@ -165,6 +171,18 @@ function renderAnimal(animal) {
 
     animalContainer.style.display = "flex";
     animalContainer.appendChild(container);
+}
+
+function saveAnimal(animal) {
+    const alreadySaved = savedAnimals.some(entry => entry.animal.name.toLowerCase() === animal.name.toLowerCase());
+
+    if (alreadySaved) {
+        alert(`${animal.name} has been saved to your list.`);
+        return;
+    }
+
+    const entry = { id: nextId++, animal, note: "" };
+    savedSection.style.display = "block";
 }
 
 function showError(message) {
