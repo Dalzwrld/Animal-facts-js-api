@@ -182,7 +182,21 @@ function saveAnimal(animal) {
     }
 
     const entry = { id: nextId++, animal, note: "" };
+    savedAnimals.push(entry);
+
+    renderSavedList();
+
     savedSection.style.display = "block";
+}
+
+function renderSavedList() {
+    savedList.innerHTML = "";
+
+    savedAnimals.forEach(entry => {
+        const card = document.createElement("div");
+        card.classList.add("saved-card");
+        card.id = `saved-card-${entry.id}`;
+    })
 }
 
 function showError(message) {
