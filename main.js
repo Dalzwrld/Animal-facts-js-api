@@ -4,6 +4,9 @@ const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const animalContainer = document.querySelector(".card-section");
 
+const savedSection = document.getElementById("saved-section");
+const savedList = document.getElementById("saved-list");
+
 let savedAnimals = [];
 let nextId = 0;
 
@@ -13,6 +16,7 @@ async function getAnimal() {
     
     if (!query) {
         showError("Please enter an animal name first");
+        return;
     }
 
     clearError();
@@ -51,7 +55,7 @@ async function getAnimal() {
     }
 }
 
-searchBtn.addEventListener("submit", (e) => {
+searchBtn.addEventListener("click", (e) => {
     e.preventDefault();
 });
 
@@ -65,11 +69,11 @@ function renderAnimal(animal) {
 
     const kingdom = animal.taxonomy?.kingdom || "N/A";
     const phylum = animal.taxonomy?.phylum || "N/A";
-    const className = animal.taxonomy?.className || "N/A";
+    const className = animal.taxonomy?.class || "N/A";
     const order = animal.taxonomy?.order || "N/A";
     const family = animal.taxonomy?.family || "N/A";
     const genus = animal.taxonomy?.genus || "N/A";
-    const scientificName = animal.taxonomy?.scientificName || "N/A";
+    const scientificName = animal.taxonomy?.scientific_name || "N/A";
 
     const locationItems = (animal.locations || [])
     .map((loc, i) => `
@@ -177,7 +181,7 @@ function saveAnimal(animal) {
     const alreadySaved = savedAnimals.some(entry => entry.animal.name.toLowerCase() === animal.name.toLowerCase());
 
     if (alreadySaved) {
-        alert(`${animal.name} has been saved to your list.`);
+        alert(`${animal.name} is already saved in your list.`);
         return;
     }
 
@@ -227,7 +231,7 @@ function renderSavedList() {
     });
 }
 
-function editNote(id) {
+function toggleEditNote(id) {
     const input = document.getElementById(`note-input-${id}`);
     const saveBtn = document.getElementById(`note-save-btn-${id}`);
     const noteText = document.getElementById(`note-text-${id}`);
@@ -273,7 +277,7 @@ function showError(message) {
     if (!error1) {
         error1 = document.createElement("p");
         error1.id = "search-error";
-        error1.style.p = `
+        error1.style.cssText = `
             font-family: var(--paragraphs-font-family);
             font-size: var(--paragraphs-font-size);
             color: #c0392b;
@@ -288,11 +292,11 @@ function showError(message) {
 }
 
 function clearError() {
-    const error1 = document.querySelector(".search-error");
+    const error1 = document.getElementById("search-error");
     if (error1) error1.textContent = "";
 }
 
-searchBtn.addEventListener("submit", () => {
+searchBtn.addEventListener("click", () => {
     getAnimal();
 });
 
